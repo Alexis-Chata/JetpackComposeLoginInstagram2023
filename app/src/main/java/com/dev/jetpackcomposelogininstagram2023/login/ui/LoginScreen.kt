@@ -44,7 +44,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dev.jetpackcomposelogininstagram2023.R
@@ -277,10 +276,4 @@ fun Header(modifier: Modifier) {
     Icon(imageVector = Icons.Default.Close,
         contentDescription = "Close App",
         modifier = modifier.clickable { activity.finish() })
-}
-
-@Preview(showBackground = true)
-@Composable
-fun LoginScreenPreview() {
-    LoginScreen(LoginViewModel())
 }

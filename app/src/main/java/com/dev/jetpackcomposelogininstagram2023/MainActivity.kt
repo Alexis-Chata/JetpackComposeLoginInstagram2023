@@ -3,6 +3,7 @@ package com.dev.jetpackcomposelogininstagram2023
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -13,8 +14,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.dev.jetpackcomposelogininstagram2023.login.ui.LoginScreen
 import com.dev.jetpackcomposelogininstagram2023.login.ui.LoginViewModel
 import com.dev.jetpackcomposelogininstagram2023.ui.theme.JetpackComposeLoginInstagram2023Theme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    private val loginViewModel:LoginViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -25,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     //Greeting("Android")
-                    LoginScreen(LoginViewModel())
+                    LoginScreen(loginViewModel)
                 }
             }
         }
